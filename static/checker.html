@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Check SQL — SQL Helper</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="logo" href="/">SQL<span>Helper</span></a>
+    <a class="back-link" href="/">← Home</a>
+  </nav>
+
+  <main class="page">
+    <header class="page-header">
+      <div class="eyebrow">Query checker</div>
+      <h1>Paste your SQL</h1>
+      <p>Write SQL yourself. The helper checks it, runs safe SELECT queries, and gives training hints.</p>
+    </header>
+
+    <section class="trainer-card">
+      <div>
+        <div class="eyebrow">Practice mode</div>
+        <h2 id="task-title">Revenue by country</h2>
+        <p id="task-goal">Show revenue and order count for paid orders by customer country.</p>
+      </div>
+      <div class="trainer-controls">
+        <label for="task-select">Training task</label>
+        <select id="task-select"></select>
+        <button id="starter-button" class="secondary-button">Load starter query</button>
+      </div>
+    </section>
+
+    <section class="schema-card">
+      <div class="panel-title">
+        <strong>Database schema</strong>
+        <span class="row-count">7 beginner tables</span>
+      </div>
+      <div id="schema-grid" class="schema-grid"></div>
+    </section>
+
+    <section class="workspace">
+      <div class="panel">
+        <div class="panel-title">
+          <label for="sql-input">Your query</label>
+          <button id="example-button" class="text-button">Use example</button>
+        </div>
+        <textarea id="sql-input" spellcheck="false" placeholder="SELECT order_id, status FROM orders WHERE status = 'paid';"></textarea>
+        <button id="check-button" class="primary-button">Check query <span>⌘ Enter</span></button>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">
+          <strong>Results</strong>
+          <div class="panel-actions">
+            <button id="ai-button" class="text-button">Ask AI</button>
+            <button id="copy-button" class="text-button" hidden>Copy SQL</button>
+          </div>
+        </div>
+        <div id="empty-result" class="empty-result">
+          <div>
+            <span class="empty-icon">✓</span>
+            <p>Validation messages and formatted SQL<br>will appear here.</p>
+          </div>
+        </div>
+        <div id="result" hidden>
+          <div id="messages"></div>
+          <div id="practice-result" class="practice-result" hidden></div>
+          <label id="sql-preview-label" class="result-label" for="formatted-sql">FORMATTED SQL</label>
+          <pre id="formatted-sql"></pre>
+          <div id="ai-result" class="ai-result" hidden></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="data-result" class="data-panel" hidden>
+      <div class="panel-title">
+        <strong>Query output</strong>
+        <span id="row-count" class="row-count"></span>
+      </div>
+      <div class="table-scroll">
+        <table id="result-table"></table>
+      </div>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

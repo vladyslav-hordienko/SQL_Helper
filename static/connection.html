@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sales Database — SQL Helper</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <a class="logo" href="/">SQL<span>Helper</span></a>
+    <a class="back-link" href="/">← Home</a>
+  </nav>
+
+  <main class="page narrow-page">
+    <header class="page-header">
+      <div class="eyebrow">Connected database</div>
+      <h1>Sales database</h1>
+      <p>A local SQLite file with realistic sample data. The checker opens it in read-only mode.</p>
+    </header>
+
+    <section class="connection-card">
+      <div class="database-status"><span></span> Connected to sales.db</div>
+      <div class="table-list">
+        <div><b>customers</b><span>500 rows</span></div>
+        <div><b>products</b><span>120 rows</span></div>
+        <div><b>orders</b><span>5,000 rows</span></div>
+        <div><b>order_items</b><span>about 12,500 rows</span></div>
+        <div><b>payments</b><span>about 4,000 rows</span></div>
+      </div>
+      <a class="primary-button button-link" href="/checker.html">Write a query</a>
+    </section>
+  </main>
+</body>
+</html>
